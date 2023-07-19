@@ -85,6 +85,11 @@ article p {
     margin-bottom: 13px;
 }
 
+article .marker{
+    background:linear-gradient(transparent 60%, yellow 60%);
+    font-weight: 700;
+}
+
 .share-tw {
     display: block;
     background: #00acee;

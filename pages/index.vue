@@ -51,10 +51,10 @@ section {
 import axios from 'axios'
 export default {
   async asyncData({ $config }) {
-    const blog = await axios.get(`${$config.apiUrl}/blog?limit=3`, {
+    const blog = await axios.get(`${$config.apiUrl}/blog?limit=4`, {
       headers: { 'X-API-KEY': $config.apiKey },
     })
-    const work = await axios.get(`${$config.apiUrl}/work?limit=3`, {
+    const work = await axios.get(`${$config.apiUrl}/work?limit=4`, {
       headers: { 'X-API-KEY': $config.apiKey },
     })
     return {

@@ -24,6 +24,11 @@
 .card-title {
     font-size: 25px;
     font-weight: 700;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
 }
 
 .card-text {

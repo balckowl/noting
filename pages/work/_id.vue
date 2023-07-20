@@ -17,7 +17,7 @@
                         </div>
 
                         <!--本文-->
-                        <div v-html="item.body"></div>
+                        <div class="line-numbers" v-html="item.body"></div>
                     </article>
 
                     <div class="share mb-5">
@@ -108,6 +108,8 @@ article .marker{
 
 <script>
 import axios from 'axios'
+import Prism from '~/plugins/prism'
+
 export default {
     async asyncData({ $config, params, error }) {
         try {
@@ -129,6 +131,9 @@ export default {
                 errorCode: 404,
             })
         }
+    },
+    mounted() {
+        Prism.highlightAll()
     },
     head() {
         return {

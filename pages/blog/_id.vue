@@ -17,7 +17,7 @@
                         </div>
 
                         <!--本文-->
-                        <div v-html="item.body"></div>
+                        <div class="line-numbers" v-html="item.body"></div>
                     </article>
 
                     <div class="share mb-5">
@@ -47,8 +47,8 @@
                             classLgBreakPoint="2" classXxlBreakPoint="3">
                             <layout-card-list name="blog" v-for="(item, index) in blogItems" :id="item.id" :key="index"
                                 :date="item.date" :image="item.image" :image-url="item.image.url" :body="item.body"
-                                :title="item.title" :isShadow="false" classInBreakPoint="1" classSmInBreakPoint="1" classMdInBreakPoint="1"
-                                classLgInBreakPoint="1" classXxlInBreakPoint="1" />
+                                :title="item.title" :isShadow="false" classInBreakPoint="1" classSmInBreakPoint="1"
+                                classMdInBreakPoint="1" classLgInBreakPoint="1" classXxlInBreakPoint="1" />
                         </layout-card-list-wrapper>
                     </div>
 
@@ -85,8 +85,8 @@ article p {
     margin-bottom: 13px;
 }
 
-article .marker{
-    background:linear-gradient(transparent 60%, yellow 60%);
+article .marker {
+    background: linear-gradient(transparent 60%, yellow 60%);
     font-weight: 700;
 }
 
@@ -108,6 +108,8 @@ article .marker{
 
 <script>
 import axios from 'axios'
+import Prism from '~/plugins/prism'
+
 export default {
     async asyncData({ $config, params, error }) {
         try {
@@ -120,7 +122,6 @@ export default {
             const blog = await axios.get(`${$config.apiUrl}/blog?limit=3&filters=flag[equals]true`, {
                 headers: { 'X-API-KEY': $config.apiKey },
             })
-
             return {
                 item: data,
                 blogItems: blog.data.contents,
@@ -130,6 +131,9 @@ export default {
                 errorCode: 404,
             })
         }
+    },
+    mounted() {
+        Prism.highlightAll()
     },
     head() {
         return {

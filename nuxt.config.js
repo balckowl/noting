@@ -18,6 +18,7 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     { rel: 'apple-touch-icon', type: 'image/png', href: '/favicons/apple-touch-icon.png' },
+    { rel: 'apple-touch-icon', type: 'image/png', href: '/favicons/android-touch-icon.png' },
     //bootstrap
     { rel: 'stylesheet', href: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" },
     { rel: 'stylesheet', href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" },

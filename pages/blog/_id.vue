@@ -138,6 +138,11 @@ export default {
     head() {
         return {
             title: this.item.title,
+            meta: [
+                { hid: 'og:description', property: 'og:description', content: 'ディスクリプション' },
+                { hid: 'og:url', property: 'og:url', content: `${this.$config.apiKey}/work/${this.params.id}` },
+                { hid: 'og:image', property: 'og:image', content: this.item.image.url },
+            ]
         }
     },
 }

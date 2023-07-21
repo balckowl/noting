@@ -10,7 +10,7 @@
                 </div>
                 <div class="col p-4">
                     <h3 class="card-title mb-3">{{ title }}</h3>
-                    <div class="card-text" v-text="body"></div>
+                    <div class="card-text" v-text="stripTags( body )"></div>
                 </div>
             </div>
             <div class="card-tag position-absolute top-0  mt-2 ms-2 p-1 text-white">
@@ -27,7 +27,7 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     text-overflow: ellipsis;
 }
 
@@ -109,6 +109,17 @@ export default {
             type: String,
             required: true,
         }
+    },
+    data(){
+        return{
+           
+        }
+    },
+    methods:{
+        stripTags(val){
+
+            return val.replace(/<([^>]+)>/g,'');
+        },
     }
 }
 </script>

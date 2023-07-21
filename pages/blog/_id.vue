@@ -135,11 +135,17 @@ export default {
     mounted() {
         Prism.highlightAll()
     },
+    methods:{
+        stripTags(val){
+
+            return val.replace(/<([^>]+)>/g,'');
+        },
+    },
     head() {
         return {
             title: this.item.title,
             meta: [
-                { hid: 'og:description', property: 'og:description', content: this.item.body },
+                { hid: 'og:description', property: 'og:description', content: this.stripTags(this.item.body) },
                 { hid: 'og:url', property: 'og:url', content: `${this.$config.apiKey}/work/${this.item.id}` },
                 { hid: 'og:image', property: 'og:image', content: this.item.image.url },
             ]

@@ -139,7 +139,7 @@ export default {
         return {
             title: this.item.title,
             meta: [
-                { hid: 'og:description', property: 'og:description', content: 'ディスクリプション' },
+                { hid: 'og:description', property: 'og:description', content: this.item.body },
                 { hid: 'og:url', property: 'og:url', content: `${this.$config.apiKey}/work/${this.item.id}` },
                 { hid: 'og:image', property: 'og:image', content: this.item.image.url },
             ]

@@ -142,7 +142,7 @@ export default {
         },
         shareTwitter(){
 
-            return `https://twiter.com/share?url=${this.$config.apiKey}`
+            return `https://twiter.com/share?url=${this.$config.apiKey}/work/${this.item.id}`
         } 
     },
     head() {

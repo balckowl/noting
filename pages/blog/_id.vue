@@ -148,6 +148,7 @@ export default {
                 { hid: 'og:description', property: 'og:description', content: this.stripTags(this.item.body) },
                 { hid: 'og:url', property: 'og:url', content: `${this.$config.apiKey}/work/${this.item.id}` },
                 { hid: 'og:image', property: 'og:image', content: this.item.image.url },
+                { hid: 'og:title', property: 'og:title', content: this.item.title },
             ]
         }
     },

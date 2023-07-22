@@ -24,7 +24,7 @@
                         <div class="container">
                             <div class="row g-0">
                                 <div class="col">
-                                    <a href="" class="share-tw text-white text-center py-1">
+                                    <a :href="shareTwitter" class="share-tw text-white text-center py-1">
                                         <i class="bi bi-twitter"></i>
                                     </a>
                                 </div>
@@ -140,6 +140,10 @@ export default {
 
             return val.replace(/<([^>]+)>/g, '');
         },
+        shareTwitter(){
+
+            return `https://twiter.com/share?url=${this.$config.apiKey}`
+        } 
     },
     head() {
         return {

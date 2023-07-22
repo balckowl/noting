@@ -135,10 +135,10 @@ export default {
     mounted() {
         Prism.highlightAll()
     },
-    methods:{
-        stripTags(val){
+    methods: {
+        stripTags(val) {
 
-            return val.replace(/<([^>]+)>/g,'');
+            return val.replace(/<([^>]+)>/g, '');
         },
     },
     head() {
@@ -149,7 +149,8 @@ export default {
                 { hid: 'og:url', property: 'og:url', content: `${this.$config.apiKey}/work/${this.item.id}` },
                 { hid: 'og:image', property: 'og:image', content: this.item.image.url },
                 { hid: 'og:title', property: 'og:title', content: this.item.title },
-                { name: 'twitter:card', content:'summary_large_image' }
+                { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }, 
+                { hid: 'twitter:image', name: 'twitter:image', content: this.item.image.url },
             ]
         }
     },

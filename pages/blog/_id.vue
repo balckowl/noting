@@ -24,17 +24,17 @@
                         <div class="container">
                             <div class="row g-0">
                                 <div class="col">
-                                    <a href="" class="share-tw text-white text-center py-1">
+                                    <a :href="this.twitterURL" class="share-tw text-white text-center py-1" target="_blank">
                                         <i class="bi bi-twitter"></i>
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="" class="share-fb text-white text-center py-1">
+                                    <a :href="this.facebookURL" class="share-fb text-white text-center py-1">
                                         <i class="bi bi-facebook"></i>
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="" class="share-ln text-white text-center py-1">
+                                    <a :href="this.lineURL" class="share-ln text-white text-center py-1">
                                         <i class="bi bi-line"></i>
                                     </a>
                                 </div>
@@ -82,7 +82,7 @@ article h3 {
     border-bottom: solid 1px #cccccc;
 }
 
-article h4{
+article h4 {
     font-weight: 700;
     margin-top: 60px;
     margin-bottom: 40px;
@@ -146,6 +146,15 @@ export default {
         Prism.highlightAll()
     },
     computed: {
+        twitterURL() {
+            return `https://twitter.com/intent/tweet?url=https://noticenoting.netlify.app/blog/${this.item.id}/`;
+        },
+        facebookURL(){
+            return `http://www.facebook.com/share.php?u=https://noticenoting.netlify.app/blog/${this.item.id}/`
+        },
+        lineURL(){
+            return `http://line.me/R/msg/text/?https://noticenoting.netlify.app/blog/${this.item.id}/`
+        }
     },
     methods: {
         stripTags(val) {

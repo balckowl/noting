@@ -1,9 +1,11 @@
-//prism.js 
 import Prism from 'prismjs'
-//好きなcssのテーマを選ぶ、私のサイトは以下のcssテーマを使用
-import 'prismjs/themes/prism-okaidia.css'　
- //使用したい言語を適宜追加 *デフォルトではjsやcssしか使えない
+
+import 'prismjs/themes/prism-okaidia.css'
+
 import 'prismjs/plugins/line-numbers/prism-line-numbers.min.js'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+
+import 'prismjs/plugins/toolbar/prism-toolbar.min.css'
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js'
 
 export default Prism

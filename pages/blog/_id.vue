@@ -24,7 +24,7 @@
                         <div class="container">
                             <div class="row g-0">
                                 <div class="col">
-                                    <a :href="shareTwitter" class="share-tw text-white text-center py-1">
+                                    <a href="" class="share-tw text-white text-center py-1">
                                         <i class="bi bi-twitter"></i>
                                     </a>
                                 </div>
@@ -78,10 +78,20 @@ article h3 {
     font-weight: 700;
     margin-top: 80px;
     margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #cccccc;
+}
+
+article h4{
+    font-weight: 700;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    border-left: solid 10px red;
+    padding-left: 10px;
 }
 
 article p {
-    line-height: 1.7;
+    line-height: 2;
     margin-bottom: 13px;
 }
 
@@ -135,25 +145,23 @@ export default {
     mounted() {
         Prism.highlightAll()
     },
+    computed: {
+    },
     methods: {
         stripTags(val) {
 
             return val.replace(/<([^>]+)>/g, '');
         },
-        shareTwitter(){
-
-            return `https://twiter.com/share?url=${this.$config.apiKey}/work/${this.item.id}`
-        } 
     },
     head() {
         return {
             title: this.item.title,
             meta: [
                 { hid: 'og:description', property: 'og:description', content: this.stripTags(this.item.body) },
-                { hid: 'og:url', property: 'og:url', content: `${this.$config.apiKey}/work/${this.item.id}` },
+                { hid: 'og:url', property: 'og:url', content: `${this.$config.apiKey}/blog/${this.item.id}` },
                 { hid: 'og:image', property: 'og:image', content: this.item.image.url },
                 { hid: 'og:title', property: 'og:title', content: this.item.title },
-                { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }, 
+                { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
                 { hid: 'twitter:image', name: 'twitter:image', content: this.item.image.url },
             ]
         }

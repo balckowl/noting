@@ -17,7 +17,7 @@ import axios from 'axios'
 
 export default {
   async asyncData({ $config }) {
-    const { data } = await axios.get(`${$config.apiUrl}/blog&limit=20`, {
+    const { data } = await axios.get(`${$config.apiUrl}/blog?limit=20`, {
       headers: { 'X-API-KEY': $config.apiKey },
     })
     return {

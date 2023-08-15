@@ -33,7 +33,7 @@ export default {
     { hid: 'og:title', property: 'og:title', content: 'サイトタイトル' },
     { hid: 'og:description', property: 'og:description', content: '共通ディスクリプション' },
     { hid: 'og:image', property: 'og:image', content: '画像のURL' },
-    { name: 'twitter:card', content:'summary_large_image' }//　twitterの画像サイズ
+    { name: 'twitter:card', content: 'summary_large_image' }//　twitterの画像サイズ
     ],
     script: [
       { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js' }
@@ -82,5 +82,15 @@ export default {
 
   privateRuntimeConfig: {
     apiKey: API_KEY
+  },
+
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/blog/page/:p',
+        component: resolve(__dirname, 'pages/blog/index.vue'),
+        name: 'blog-page-p',
+      })
+    },
   },
 }

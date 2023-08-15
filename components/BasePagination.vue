@@ -3,7 +3,7 @@
         <ul class="pager">
             <li v-if="current > 1" class="page arrow">
                 <a :href="getPath(current - 1)">
-                    前のページへ
+                    ＜＜
                 </a>
             </li>
             <li v-if="3 < current" class="page">
@@ -30,12 +30,36 @@
             </li>
             <li v-if="current < pager.length" class="page arrow">
                 <a :href="getPath(current + 1)">
-                    次のページへ
+                    ＞＞
                 </a>
             </li>
         </ul>
     </div>
-</template>
+</template>]
+
+<style>
+.pager {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pager li{
+    padding: 10px;
+}
+
+.pager li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: white;
+}
+</style>
 
 <script>
 export default {
@@ -50,14 +74,10 @@ export default {
             type: Number,
             required: true,
         },
-        category: {
-            type: String,
-            required: false,
-        },
     },
     methods: {
         getPath(p) {
-            return `/work/${p}`;
+            return `/blog/page/${p}`;
         },
     },
 }

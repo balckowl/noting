@@ -77,7 +77,11 @@ export default {
     },
     methods: {
         getPath(p) {
-            return `/blog/page/${p}`;
+            if( p === 1){
+                return '/blog/'
+            } else{
+                return `/blog/page/${p}`;
+            } 
         },
     },
 }

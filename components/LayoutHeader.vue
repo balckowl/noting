@@ -24,7 +24,7 @@
                         <a class="nav-link text-white" href="/blog">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="https://form.run/@noting">Contact</a>
+                        <a class="nav-link text-white" href="/contact">Contact</a>
                     </li>
                 </ul>
             </div>

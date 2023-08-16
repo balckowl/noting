@@ -13,7 +13,7 @@
                         </div>
 
                         <div class="thumbnail mb-3">
-                            <img :src="item.image.url" alt="" class="mw-100">
+                            <img :src="`${item.image.url}?fm=webp`" alt="" class="mw-100">
                         </div>
 
                         <!--本文-->

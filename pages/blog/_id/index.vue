@@ -100,6 +100,24 @@ article .marker {
     font-weight: 700;
 }
 
+.code-toolbar {
+  position: relative;
+}
+
+.toolbar-item:nth-child(1) span{
+    position: absolute;
+    inset: auto 0 0 auto;
+    color: white;
+    font-size: 14px;
+    padding: 2px 4px;
+    background-color: black;
+}
+
+.toolbar-item:nth-child(2) button{
+    position: absolute;
+    inset: 0 0 auto auto;
+}
+
 .share-tw {
     display: block;
     background: #00acee;
@@ -149,10 +167,10 @@ export default {
         twitterURL() {
             return `https://twitter.com/intent/tweet?url=https://noticenoting.netlify.app/blog/${this.item.id}/`;
         },
-        facebookURL(){
+        facebookURL() {
             return `http://www.facebook.com/share.php?u=https://noticenoting.netlify.app/blog/${this.item.id}/`
         },
-        lineURL(){
+        lineURL() {
             return `http://line.me/R/msg/text/?https://noticenoting.netlify.app/blog/${this.item.id}/`
         }
     },

@@ -100,23 +100,29 @@ article .marker {
     font-weight: 700;
 }
 
-.code-toolbar {
+/*.code-toolbar {
   position: relative;
+}*/
+
+pre[class*=language-] {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    white-space: pre-wrap;
 }
 
-.toolbar-item:nth-child(1) span{
+/*.toolbar-item:nth-child(1) span{
     position: absolute;
-    inset: auto 0 0 auto;
+    inset: 0 auto auto 0;
     color: white;
     font-size: 14px;
     padding: 2px 4px;
-    background-color: black;
+    background-color: gray;
 }
 
 .toolbar-item:nth-child(2) button{
     position: absolute;
     inset: 0 0 auto auto;
-}
+}*/
 
 .share-tw {
     display: block;

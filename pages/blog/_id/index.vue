@@ -105,8 +105,8 @@ article .marker {
 }*/
 
 pre[class*=language-] {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     white-space: pre-wrap;
 }
 
